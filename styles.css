@@ -489,6 +489,10 @@ body::after {
     margin-right: auto;
     justify-content: center;
 }
+.benefits
+{
+    grid-template-columns: repeat(4, 1fr)!important;
+}
 
 .benefit-card {
     background: rgba(0, 0, 0, 0.4);
@@ -3208,6 +3212,228 @@ body::after {
     
     .faq-answer p {
         font-size: calc(0.7rem + 0.12vw);
+    }
+}
+
+/* Sign In Page Styles */
+.signin-page {
+    background: linear-gradient(180deg, #0F0C10 0%, #130D1B 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(2rem + 2vw);
+    box-sizing: border-box;
+}
+
+.signin-container {
+    width: 90%;
+    max-width: calc(500px + 20vw);
+    margin: 0 auto;
+}
+
+.signin-form-wrapper {
+    background: linear-gradient(180deg, #0F0C10 0%, #130D1B 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: calc(0.6rem + 0.5vw);
+    padding: calc(1.2rem + 0.8vw) calc(2rem + 2vw);
+    box-shadow: 0 calc(20px + 2vw) calc(60px + 6vw) rgba(0, 0, 0, 0.5);
+    height: calc(220px * 100vw / 1440px);
+    max-height: 35vw;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.signin-title {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 400;
+    font-size: calc(1.2rem + 0.8vw);
+    line-height: 120%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: calc(1rem + 0.5vw);
+    letter-spacing: 0.01em;
+}
+
+.signin-form-group {
+    margin-bottom: calc(0.8rem + 0.4vw);
+}
+
+.signin-form-group input {
+    width: 100%;
+    padding: calc(0.8rem + 0.4vw) calc(1.2rem + 0.6vw);
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: calc(0.4rem + 0.2vw);
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-size: calc(0.9rem + 0.2vw);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.signin-form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.signin-form-group input:focus {
+    outline: none;
+    border-color: rgba(182, 150, 255, 0.6);
+    background: rgba(40, 40, 40, 0.9);
+}
+
+.signin-checkbox-group {
+    margin-bottom: calc(1rem + 0.5vw);
+    display: flex;
+    align-items: center;
+}
+
+.signin-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-size: calc(0.9rem + 0.2vw);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.signin-checkbox-wrapper input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: calc(1.2rem + 0.3vw);
+    height: calc(1.2rem + 0.3vw);
+    margin-right: calc(0.6rem + 0.2vw);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    background: rgba(30, 30, 30, 0.8);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.signin-checkbox-wrapper input[type="checkbox"]:checked {
+    background: rgba(182, 150, 255, 0.2);
+    border-color: rgba(182, 150, 255, 1);
+}
+
+.signin-checkbox-wrapper input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(182, 150, 255, 1);
+    font-size: calc(0.6rem + 0.15vw);
+    font-weight: bold;
+}
+
+.signin-btn {
+    width: 100%;
+    padding: calc(0.8rem + 0.4vw) calc(2rem + 1vw);
+    background: radial-gradient(100% 100% at 50% 0%, #7902C0 30%, #12011E 120%);
+    color: white;
+    border: none;
+    border-radius: calc(0.4rem + 0.2vw);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 500;
+    font-size: calc(1rem + 0.2vw);
+    letter-spacing: 0.02em;
+}
+
+.signin-btn:hover {
+    background: radial-gradient(100% 100% at 50% 0%, #8B03E6 30%, #1A0228 120%);
+    transform: translateY(-2px);
+}
+
+.signin-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive styles for signin page */
+@media (max-width: 768px) {
+    .signin-page {
+        padding: calc(1rem + 1vw);
+    }
+    
+    .signin-container {
+        width: 85%;
+        max-width: calc(350px + 20vw);
+    }
+    
+    .signin-form-wrapper {
+        padding: calc(1rem + 0.6vw) calc(1.5rem + 1.5vw);
+        height: calc(180px * 100vw / 768px);
+        max-height: 180px;
+        min-height: 160px;
+    }
+    
+    .signin-title {
+        font-size: calc(1rem + 0.6vw);
+        margin-bottom: calc(0.8rem + 0.4vw);
+    }
+    
+    .signin-form-group {
+        margin-bottom: calc(0.6rem + 0.3vw);
+    }
+    
+    .signin-form-group input {
+        padding: calc(0.6rem + 0.3vw) calc(1rem + 0.5vw);
+        font-size: calc(0.8rem + 0.15vw);
+    }
+    
+    .signin-checkbox-wrapper {
+        font-size: calc(0.8rem + 0.15vw);
+    }
+    
+    .signin-btn {
+        padding: calc(0.6rem + 0.3vw) calc(1.5rem + 0.8vw);
+        font-size: calc(0.9rem + 0.15vw);
+    }
+}
+
+@media (max-width: 480px) {
+    .signin-page {
+        padding: calc(0.8rem + 0.8vw);
+    }
+    
+    .signin-container {
+        width: 90%;
+        max-width: calc(280px + 15vw);
+    }
+    
+    .signin-form-wrapper {
+        padding: calc(0.8rem + 0.4vw) calc(1.2rem + 1vw);
+        height: calc(160px * 100vw / 480px);
+        max-height: 160px;
+        min-height: 140px;
+    }
+    
+    .signin-title {
+        font-size: calc(0.9rem + 0.4vw);
+        margin-bottom: calc(0.6rem + 0.3vw);
+    }
+    
+    .signin-form-group {
+        margin-bottom: calc(0.5rem + 0.2vw);
+    }
+    
+    .signin-form-group input {
+        padding: calc(0.5rem + 0.25vw) calc(0.8rem + 0.4vw);
+        font-size: calc(0.7rem + 0.1vw);
+    }
+    
+    .signin-checkbox-wrapper {
+        font-size: calc(0.7rem + 0.1vw);
+    }
+    
+    .signin-btn {
+        padding: calc(0.5rem + 0.25vw) calc(1.2rem + 0.6vw);
+        font-size: calc(0.8rem + 0.1vw);
     }
 }
 
