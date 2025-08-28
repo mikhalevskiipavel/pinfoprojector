@@ -10,7 +10,9 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="img/logo.png" alt="InfoProjector" class="logo-image">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="InfoProjector" class="logo-image">
+                </a>
             </div>
             <div class="hamburger-menu">
                 <span class="hamburger-line"></span>
@@ -22,14 +24,18 @@
     
     <main class="main-content">
         <div class="hero-section">
-            <h1 class="hero-title"><span id="dynamic-text">Start & scale your business</span></h1>
+            <h1 class="hero-title">
+                <div class="title-line-1">Launch & scale</div>
+                <div class="title-line-2">your <span id="dynamic-text">coaching</span> business</div>
+            </h1>
             <p class="hero-subtitle">Let's take the first step together today!</p>
-            <button class="cta-button">Get Started</button>
+            <a href="atlas.html" class="cta-button">Get Started</a>
         </div>
     </main>
     
     <section class="mission-section">
         <div class="mission-container">
+            <h2 class="mission-section-title">Our mission</h2>
             <h2 class="mission-title">To give you the tools you need<br>to reframe the way you live.</h2>
             <p class="mission-description">We're on a mission to reframe the way you live – by delivering the best online business programs the world has ever seen. Our courses are built to be 100x more effective than traditional universities – at less than 1% of the cost. We also aim to deliver 10x more value than mentorships and programs priced at $50,000 or more. We're here to grow the next generation of info businesses.</p>
         </div>
@@ -87,14 +93,16 @@
             
             <div class="vertical-line"></div>
             
-            <button class="cta-button-secondary">Get Started</button>
+            <a href="atlas.html" class="cta-button-secondary">Get Started</a>
         </div>
     </section>
 
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="img/logo.png" alt="InfoProjector" class="footer-logo-image">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="InfoProjector" class="footer-logo-image">
+                </a>
             </div>
             
             <div class="footer-social">
@@ -103,8 +111,8 @@
             </div>
             
             <div class="footer-legal">
-                <a href="#" class="footer-link">Terms conditions</a>
-                <a href="#" class="footer-link">Privacy</a>
+                <a href="terms.html" class="footer-link">Terms conditions</a>
+                <a href="privacy.html" class="footer-link">Privacy</a>
             </div>
             
             <div class="footer-copyright">
@@ -116,11 +124,11 @@
     <script>
         // Анимация смены текста
         const dynamicText = document.getElementById('dynamic-text');
-        const texts = ['Start & scale your business', 'Coaching consulting info'];
+        const texts = ['coaching', 'consulting', 'info'];
         let currentIndex = 0;
 
         function changeText() {
-            // Fade out
+            // Fade out только меняющееся слово
             dynamicText.style.opacity = '0';
             
             setTimeout(() => {
@@ -134,7 +142,7 @@
         // Добавляем CSS transition для плавной анимации
         dynamicText.style.transition = 'opacity 0.3s ease-in-out';
         
-        // Запускаем смену через 1.5 секунды после загрузки, потом каждые 3 секунды
+        // Запускаем смену через 1.5 секунды, потом каждые 3 секунды
         setTimeout(() => {
             changeText();
             setInterval(changeText, 3000);
@@ -153,15 +161,20 @@
             }
         }
 
-        // Обработчик для возврата кнопки при паузе
-        document.getElementById('main-video').addEventListener('pause', function() {
-            const video = document.getElementById('main-video');
-            const playBtn = document.getElementById('play-btn');
-            
-            video.classList.remove('playing');
-            playBtn.classList.remove('hidden');
-            video.controls = false;
-        });
+        // Обработчик для возврата кнопки при паузе (только если элемент существует)
+        const mainVideo = document.getElementById('main-video');
+        if (mainVideo) {
+            mainVideo.addEventListener('pause', function() {
+                const video = document.getElementById('main-video');
+                const playBtn = document.getElementById('play-btn');
+                
+                if (video && playBtn) {
+                    video.classList.remove('playing');
+                    playBtn.classList.remove('hidden');
+                    video.controls = false;
+                }
+            });
+        }
     </script>
 </body>
 </html>
