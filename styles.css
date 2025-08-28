@@ -179,10 +179,11 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: calc(65vh - calc(2rem + 1vw));
+    min-height: calc(55vh - calc(2rem + 1vw));
     padding: calc(1rem + 1.5vw) calc(1rem + 1vw) calc(1rem + 2vw) calc(1rem + 1vw);
     position: relative;
     z-index: 10;
+    padding-bottom: 10vw;
 }
 
 .hero-section {
@@ -270,7 +271,7 @@ body::after {
 
 @media (max-width: 768px) {
     .hero-title {
-        font-size: calc(1rem + 1.5vw);
+        font-size: calc(1.0rem + 2.8vw)!important;
         margin-bottom: calc(1.5rem + 1vw);
         min-height: calc(3.5rem + 4.5vw);
         letter-spacing: -0.02em;
@@ -309,7 +310,7 @@ body::after {
     }
     
     .hero-title {
-        font-size: calc(0.8rem + 0.8vw);
+        font-size: calc(1.0rem + 2.8vw)!important;
         margin-bottom: calc(1.2rem + 0.8vw);
         min-height: calc(2.8rem + 3.5vw);
         letter-spacing: -0.03em;
@@ -322,7 +323,7 @@ body::after {
     
     .main-content {
         padding: calc(0.8rem + 0.8vw) calc(0.8rem + 0.5vw) 0;
-        min-height: calc(40vh - calc(3rem + 2vw));
+        min-height: calc(40vh - calc(3rem + 2vw))!important;
     }
 }
 
@@ -857,6 +858,8 @@ body::after {
     position: relative;
     z-index: 10;
     padding: calc(4rem + 3vw) calc(1rem + 1vw);
+    padding-top: 3vw!important;
+    padding-bottom: 1vw!important;
     background: transparent;
 }
 
@@ -2737,7 +2740,7 @@ body::after {
 
 /* Waitlist Benefits Section */
 .waitlist-benefits-section {
-    background: #0a0a0a;
+    background: black;
     padding: calc(4rem + 2vw) 0;
     position: relative;
 }
@@ -2829,7 +2832,7 @@ body::after {
 
 /* FAQ Section */
 .faq-section {
-    background: #0a0a0a;
+    background: black;
     padding: calc(4rem + 2vw) 0;
 }
 
