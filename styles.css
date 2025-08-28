@@ -88,15 +88,15 @@ body::after {
 
 .header {
     width: 100%;
-    padding: 35px 0 20px 0;
+    padding: calc(20px + 1.2vw) 0 calc(10px + 0.8vw) 0;
     position: relative;
     z-index: 10;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: calc(600px + 30vw);
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 calc(20px + 1.5vw);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -108,7 +108,7 @@ body::after {
 }
 
 .logo-image {
-    height: 40px;
+    height: calc(28px + 1vw);
     width: auto;
 }
 
@@ -116,16 +116,16 @@ body::after {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    gap: 6px;
-    padding: 12px;
+    gap: calc(4px + 0.2vw);
+    padding: calc(8px + 0.3vw);
     background: rgba(22, 3, 34, 1);
-    border-radius: 8px;
+    border-radius: calc(6px + 0.2vw);
     transition: all 0.3s ease;
 }
 
 .hamburger-line {
-    width: 24px;
-    height: 2px;
+    width: calc(18px + 0.5vw);
+    height: calc(1.5px + 0.1vw);
     background-color: #ffffff;
     transition: all 0.3s ease;
 }
@@ -134,34 +134,25 @@ body::after {
     background-color: #e0e0e0;
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 0 20px;
-        max-width: 100%;
-    }
-    
-    .header {
-        padding: 25px 0 15px 0;
-    }
-}
+
 
 /* Main Content */
 .main-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: calc(75vh - calc(2rem + 1vw));
-    padding: calc(1rem + 1.5vw) calc(1rem + 1vw) calc(1rem + 4vw) calc(1rem + 1vw);
+    min-height: calc(65vh - calc(2rem + 1vw));
+    padding: calc(1rem + 1.5vw) calc(1rem + 1vw) calc(1rem + 2vw) calc(1rem + 1vw);
     position: relative;
     z-index: 10;
 }
 
 .hero-section {
     text-align: center;
-    max-width: 100%; /* Увеличил ширину с 800px до 1200px */
+    max-width: 100%;
     margin: 0 auto;
-    transform: translateY(-60px);
-    padding-top: calc(5rem + 3vw);
+    transform: translateY(calc(-30px - 2vw));
+    padding-top: calc(3rem + 4vw);
 }
 
 .hero-title {
@@ -204,14 +195,11 @@ body::after {
     font-weight: normal;
     font-size: calc(0.8rem + 0.5vw);
     line-height: 1.5;
-    background: linear-gradient(90deg, #707070 0%, #FEFEFE 60%, #707070 120%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    padding-top: 1rem;
+    color: rgba(102, 102, 102, 1);
+    padding-top: calc(0.5rem + 0.4vw);
     margin: 0 auto calc(1.2rem + 0.6vw) auto;
     letter-spacing: 0.01em;
-    max-width: 800px!important;
+    max-width: calc(300px + 40vw)!important;
     text-align: center;
 }
 
@@ -229,6 +217,9 @@ body::after {
     letter-spacing: 0.02em;
     position: relative;
     white-space: nowrap;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
 
 .cta-button:hover {
@@ -253,7 +244,8 @@ body::after {
     }
     
     .main-content {
-        padding: calc(1.5rem + 1.5vw) calc(1rem + 0.5vw);
+        padding: calc(1rem + 1vw) calc(1rem + 0.5vw);
+        min-height: calc(50vh - calc(3rem + 2vw));
     }
 }
 
@@ -292,9 +284,8 @@ body::after {
     }
     
     .main-content {
-        padding: calc(1rem + 1vw) calc(0.8rem + 0.5vw);
-        min-height: calc(60vh - calc(5rem + 10vw));
-        padding-bottom:0;
+        padding: calc(0.8rem + 0.8vw) calc(0.8rem + 0.5vw) 0;
+        min-height: calc(40vh - calc(3rem + 2vw));
     }
 }
 
@@ -308,6 +299,11 @@ body::after {
     .hero-subtitle {
         font-size: calc(0.5rem + 0.2vw);
         letter-spacing: -0.03em;
+    }
+    
+    .main-content {
+        padding: calc(0.5rem + 0.5vw) calc(0.5rem + 0.3vw) 0;
+        min-height: calc(35vh - calc(2rem + 1vw));
     }
 }
 
@@ -351,8 +347,20 @@ body::after {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: calc(3rem + 1.5vw);
+    margin-bottom: calc(1.5rem + 0.8vw);
     letter-spacing: 0%;
+}
+
+.target-audience-subtitle {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 300;
+    font-size: calc(1rem + 0.3vw);
+    line-height: 140%;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 auto calc(3rem + 2vw) auto;
+    max-width: calc(600px + 10vw);
+    letter-spacing: 0%;
+    text-align: center;
 }
 
 .audience-grid {
@@ -360,6 +368,14 @@ body::after {
     grid-template-columns: repeat(4, 1fr);
     gap: calc(1.5rem + 1vw);
     margin-bottom: calc(4rem + 2vw);
+    justify-content: center;
+}
+
+/* Для секций с 3 элементами */
+.audience-grid.three-items {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: calc(900px + 10vw);
+    margin: 0 auto calc(4rem + 2vw) auto;
 }
 
 .audience-card {
@@ -435,9 +451,13 @@ body::after {
     border: calc(1px + 0.05vw) solid rgba(255, 255, 255, 0.1);
     border-radius: calc(8px + 0.3vw);
     padding: calc(1.5rem + 0.8vw);
-    text-align: left;
+    text-align: center;
     transition: all 0.3s ease;
     max-width: calc(280px + 5vw);
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .benefit-card:hover {
@@ -471,9 +491,39 @@ body::after {
         gap: calc(1.2rem + 0.8vw);
     }
     
+    .audience-grid.three-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .benefits-grid {
         grid-template-columns: 1fr;
         gap: calc(1.5rem + 0.8vw);
+    }
+    
+    .main-content {
+        min-height: calc(55vh - calc(2rem + 1vw));
+        padding: calc(1rem + 1.2vw) calc(1rem + 0.8vw) calc(1rem + 1.5vw);
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .info-section-block {
+        grid-template-columns: 1fr !important;
+        gap: calc(2rem + 1.5vw);
+        text-align: center;
+        padding-bottom: calc(3.5rem + 2.5vw);
+    }
+    
+    .info-section-title {
+        font-size: calc(1.6rem + 1vw);
+        margin-bottom: calc(1rem + 0.5vw);
+        text-align: center;
+    }
+    
+    .info-section-content {
+        font-size: calc(0.9rem + 0.3vw);
+        text-align: left;
     }
 }
 
@@ -491,24 +541,87 @@ body::after {
         gap: calc(1.5rem + 0.8vw);
     }
     
+    .audience-grid.three-items {
+        grid-template-columns: 1fr;
+    }
+    
     .benefits-grid {
         gap: calc(1.8rem + 0.8vw);
         margin-bottom: calc(2rem + 1vw);
         max-width: 100%;
     }
     
+
+    
     .benefit-card {
-        padding: calc(1.5rem + 0.8vw);
-        max-width: 100%;
+        padding: calc(1.2rem + 0.6vw);
     }
     
     .target-audience-title {
         font-size: calc(1.7rem + 0.8vw);
-        margin-bottom: calc(2rem + 1vw);
+        margin-bottom: calc(1rem + 0.4vw);
+    }
+    
+    .target-audience-subtitle {
+        font-size: calc(0.85rem + 0.2vw);
+        margin-bottom: calc(1.8rem + 0.8vw);
     }
     
     .audience-card-header {
         gap: calc(0.8rem + 0.3vw);
+    }
+    
+    .founder-section {
+        padding: calc(3rem + 2vw) calc(1rem + 0.8vw);
+    }
+    
+    .founder-container {
+        gap: calc(1.2rem + 0.8vw);
+    }
+    
+    .founder-name {
+        font-size: calc(0.8rem + 0.15vw);
+    }
+    
+    .founder-title {
+        font-size: calc(2rem + 1vw);
+    }
+    
+
+    
+    .info-sections {
+        padding: calc(3rem + 2vw) calc(1rem + 0.8vw);
+    }
+    
+    .info-sections-container {
+        gap: calc(3rem + 2vw);
+    }
+    
+    .info-section-block {
+        grid-template-columns: 1fr;
+        gap: calc(1.5rem + 1vw);
+        text-align: left;
+        padding-bottom: calc(3rem + 2vw);
+    }
+    
+    .info-section-block:not(:last-child)::after {
+        bottom: calc(1.5rem + 1vw);
+    }
+    
+    .info-sections.first-section .info-section-block {
+        padding-bottom: calc(3rem + 2vw);
+    }
+    
+    .info-sections.first-section .info-section-block::after {
+        bottom: calc(1.5rem + 1vw);
+    }
+    
+    .info-section-title {
+        font-size: calc(1.5rem + 0.8vw);
+    }
+    
+    .info-section-content {
+        font-size: calc(0.85rem + 0.18vw);
     }
 }
 
@@ -530,13 +643,24 @@ body::after {
     }
     
     .benefit-card {
-        padding: calc(1.2rem + 0.8vw);
-        max-width: 100%;
+        padding: calc(1rem + 0.5vw);
     }
+    
+
     
     .target-audience-title {
         font-size: calc(1.5rem + 0.6vw);
-        margin-bottom: calc(2rem + 1vw);
+        margin-bottom: calc(1rem + 0.4vw);
+    }
+    
+    .target-audience-subtitle {
+        font-size: calc(0.75rem + 0.15vw);
+        margin-bottom: calc(1.5rem + 0.6vw);
+    }
+    
+    .audience-grid.three-items {
+        grid-template-columns: 1fr;
+        max-width: 100%;
     }
     
     .audience-card-header {
@@ -546,6 +670,62 @@ body::after {
     .audience-icon {
         width: calc(40px + 1vw);
         height: calc(40px + 1vw);
+    }
+    
+    .founder-section {
+        padding: calc(2.5rem + 1.5vw) calc(1rem + 0.5vw);
+    }
+    
+    .founder-container {
+        gap: calc(1rem + 0.6vw);
+    }
+    
+    .founder-name {
+        font-size: calc(0.75rem + 0.12vw);
+    }
+    
+    .founder-title {
+        font-size: calc(1.8rem + 0.8vw);
+    }
+    
+
+    
+    .info-sections {
+        padding: calc(2.5rem + 1.5vw) calc(1rem + 0.5vw);
+    }
+    
+    .info-sections-container {
+        gap: calc(2.5rem + 1.5vw);
+    }
+    
+    .info-section-block {
+        grid-template-columns: 1fr !important;
+        gap: calc(1.2rem + 0.8vw);
+        padding-bottom: calc(2.5rem + 1.5vw);
+        text-align: center;
+    }
+    
+    .info-section-block:not(:last-child)::after {
+        bottom: calc(1.25rem + 0.75vw);
+    }
+    
+    .info-sections.first-section .info-section-block {
+        padding-bottom: calc(2.5rem + 1.5vw);
+    }
+    
+    .info-sections.first-section .info-section-block::after {
+        bottom: calc(1.25rem + 0.75vw);
+    }
+    
+    .info-section-title {
+        font-size: calc(1.3rem + 0.6vw);
+        text-align: center;
+        margin-bottom: calc(1rem + 0.5vw);
+    }
+    
+    .info-section-content {
+        font-size: calc(0.8rem + 0.15vw);
+        text-align: left;
     }
 }
 
@@ -558,14 +738,81 @@ body::after {
         padding: 0 calc(0.3rem + 0.1vw);
     }
     
+    .target-audience-subtitle {
+        font-size: calc(0.65rem + 0.12vw);
+        margin-bottom: calc(1.2rem + 0.5vw);
+    }
+    
+    .audience-grid.three-items {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+    
     .benefits-grid {
         gap: calc(1rem + 0.5vw);
         max-width: 100%;
     }
     
     .benefit-card {
-        padding: calc(1rem + 0.5vw);
+        padding: calc(0.8rem + 0.4vw);
     }
+    
+    .founder-section {
+        padding: calc(2rem + 1vw) calc(0.8rem + 0.3vw);
+    }
+    
+    .founder-container {
+        gap: calc(0.8rem + 0.4vw);
+    }
+    
+    .founder-name {
+        font-size: calc(0.7rem + 0.1vw);
+    }
+    
+    .founder-title {
+        font-size: calc(1.5rem + 0.6vw);
+    }
+    
+
+    
+    .info-sections {
+        padding: calc(2rem + 1vw) calc(0.8rem + 0.3vw);
+    }
+    
+    .info-sections-container {
+        gap: calc(2rem + 1vw);
+    }
+    
+    .info-section-block {
+        grid-template-columns: 1fr !important;
+        gap: calc(1rem + 0.6vw);
+        padding-bottom: calc(2rem + 1vw);
+        text-align: center;
+    }
+    
+    .info-section-block:not(:last-child)::after {
+        bottom: calc(1rem + 0.5vw);
+    }
+    
+    .info-sections.first-section .info-section-block {
+        padding-bottom: calc(2rem + 1vw);
+    }
+    
+    .info-sections.first-section .info-section-block::after {
+        bottom: calc(1rem + 0.5vw);
+    }
+    
+    .info-section-title {
+        font-size: calc(1.1rem + 0.4vw);
+        text-align: center;
+        margin-bottom: calc(0.8rem + 0.4vw);
+    }
+    
+    .info-section-content {
+        font-size: calc(0.75rem + 0.12vw);
+        text-align: left;
+    }
+
 }
 
 /* Phase Section */
@@ -1015,20 +1262,9 @@ body::after {
     letter-spacing: 0.005em;
 }
 
-@media (max-width: 900px) {
-    .workflow-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: calc(1rem + 0.5vw);
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .workflow-card {
-        padding: calc(1rem + 0.5vw);
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-}
+
+
+
 
 @media (max-width: 768px) {
     .problem-section {
@@ -1081,88 +1317,7 @@ body::after {
         font-size: calc(0.85rem + 0.25vw);
         margin-bottom: calc(0.7rem + 0.25vw);
     }
-    
-    .components-section {
-        padding: calc(2rem + 1vw) calc(1rem + 0.5vw);
-    }
-    
-    .components-grid {
-        grid-template-columns: 1fr;
-        gap: calc(1.5rem + 0.5vw);
-    }
-    
-    .components-title {
-        font-size: calc(1.5rem + 0.6vw);
-        margin-bottom: calc(1rem + 0.4vw);
-    }
-    
-    .components-subtitle {
-        font-size: calc(0.85rem + 0.2vw);
-        margin-bottom: calc(1.8rem + 0.8vw);
-    }
-    
-    .component-card-header {
-        gap: calc(0.6rem + 0.25vw);
-        margin-bottom: calc(0.8rem + 0.4vw);
-    }
-    
-    .component-icon {
-        width: calc(40px + 1.2vw);
-        height: calc(40px + 1.2vw);
-    }
-    
-    .component-card-title {
-        font-size: calc(14px + 0.25vw);
-    }
-    
-    .component-card-text {
-        font-size: calc(11px + 0.18vw);
-    }
-    
-    .workflow-section {
-        padding: calc(2rem + 1vw) calc(1rem + 0.5vw);
-    }
-    
-    .workflow-container {
-        padding: 0 calc(0.5rem + 0.3vw);
-        max-width: 100%;
-    }
-    
-    .workflow-grid {
-        grid-template-columns: 1fr;
-        gap: calc(1rem + 0.3vw);
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .workflow-title {
-        font-size: calc(1.5rem + 0.6vw);
-        margin-bottom: calc(1.8rem + 0.8vw);
-    }
-    
-    .workflow-card {
-        padding: calc(0.8rem + 0.4vw);
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .workflow-card-header {
-        gap: calc(0.6rem + 0.25vw);
-        margin-bottom: calc(0.8rem + 0.4vw);
-    }
-    
-    .workflow-icon {
-        width: calc(36px + 1vw);
-        height: calc(36px + 1vw);
-    }
-    
-    .workflow-card-title {
-        font-size: calc(13px + 0.2vw);
-    }
-    
-    .workflow-card-text {
-        font-size: calc(10px + 0.15vw);
-    }
+
 }
 
 @media (max-width: 480px) {
@@ -1218,85 +1373,7 @@ body::after {
         padding-left: calc(1.2rem + 0.4vw);
     }
     
-    .components-section {
-        padding: calc(1.5rem + 0.8vw) calc(0.8rem + 0.4vw);
-    }
-    
-    .components-grid {
-        gap: calc(1.2rem + 0.4vw);
-    }
-    
-    .components-title {
-        font-size: calc(1.3rem + 0.4vw);
-        margin-bottom: calc(0.8rem + 0.3vw);
-    }
-    
-    .components-subtitle {
-        font-size: calc(0.75rem + 0.15vw);
-        margin-bottom: calc(1.5rem + 0.6vw);
-    }
-    
-    .component-card-header {
-        gap: calc(0.5rem + 0.2vw);
-        margin-bottom: calc(0.7rem + 0.3vw);
-    }
-    
-    .component-icon {
-        width: calc(36px + 1vw);
-        height: calc(36px + 1vw);
-    }
-    
-    .component-card-title {
-        font-size: calc(13px + 0.2vw);
-    }
-    
-    .component-card-text {
-        font-size: calc(10px + 0.15vw);
-    }
-    
-    .workflow-section {
-        padding: calc(1.5rem + 0.8vw) calc(0.8rem + 0.4vw);
-    }
-    
-    .workflow-container {
-        padding: 0 calc(0.3rem + 0.2vw);
-        max-width: 100%;
-    }
-    
-    .workflow-grid {
-        grid-template-columns: 1fr;
-        gap: calc(1rem + 0.3vw);
-        width: 100%;
-    }
-    
-    .workflow-title {
-        font-size: calc(1.3rem + 0.4vw);
-        margin-bottom: calc(1.5rem + 0.6vw);
-    }
-    
-    .workflow-card {
-        padding: calc(0.6rem + 0.3vw);
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .workflow-card-header {
-        gap: calc(0.5rem + 0.2vw);
-        margin-bottom: calc(0.7rem + 0.3vw);
-    }
-    
-    .workflow-icon {
-        width: calc(32px + 0.8vw);
-        height: calc(32px + 0.8vw);
-    }
-    
-    .workflow-card-title {
-        font-size: calc(12px + 0.18vw);
-    }
-    
-    .workflow-card-text {
-        font-size: calc(9px + 0.12vw);
-    }
+
     
 
 }
@@ -1345,349 +1422,158 @@ body::after {
         padding-left: calc(1rem + 0.3vw);
     }
     
-    .components-section {
-        padding: calc(1.2rem + 0.6vw) calc(0.6rem + 0.3vw);
-    }
-    
-    .components-grid {
-        gap: calc(0.8rem + 0.3vw);
-    }
-    
-    .components-title {
-        font-size: calc(1.1rem + 0.3vw);
-        margin-bottom: calc(0.6rem + 0.2vw);
-    }
-    
-    .components-subtitle {
-        font-size: calc(0.65rem + 0.12vw);
-        margin-bottom: calc(1.2rem + 0.5vw);
-    }
-    
-    .component-card-header {
-        gap: calc(0.4rem + 0.15vw);
-        margin-bottom: calc(0.6rem + 0.25vw);
-    }
-    
-    .component-icon {
-        width: calc(32px + 0.8vw);
-        height: calc(32px + 0.8vw);
-    }
-    
-    .component-card-title {
-        font-size: calc(12px + 0.15vw);
-    }
-    
-    .component-card-text {
-        font-size: calc(9px + 0.12vw);
-    }
-    
-    .workflow-section {
-        padding: calc(1.2rem + 0.6vw) calc(0.6rem + 0.3vw);
-    }
-    
-    .workflow-container {
-        padding: 0 calc(0.2rem + 0.1vw);
-        max-width: 100%;
-    }
-    
-    .workflow-grid {
-        grid-template-columns: 1fr;
-        gap: calc(0.8rem + 0.3vw);
-        width: 100%;
-    }
-    
-    .workflow-title {
-        font-size: calc(1.1rem + 0.3vw);
-        margin-bottom: calc(1.2rem + 0.5vw);
-    }
-    
-    .workflow-card {
-        padding: calc(0.5rem + 0.25vw);
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .workflow-card-header {
-        gap: calc(0.4rem + 0.15vw);
-        margin-bottom: calc(0.6rem + 0.25vw);
-    }
-    
-    .workflow-icon {
-        width: calc(28px + 0.6vw);
-        height: calc(28px + 0.6vw);
-    }
-    
-    .workflow-card-title {
-        font-size: calc(11px + 0.15vw);
-    }
-    
-    .workflow-card-text {
-        font-size: calc(8px + 0.1vw);
-    }
+
     
 
 }
 
-@media (max-width: 375px) {
-    .workflow-section {
-        padding: calc(1rem + 0.4vw) calc(0.4rem + 0.2vw);
-    }
-    
-    .workflow-container {
-        padding: 0 calc(0.1rem + 0.05vw);
-        max-width: 100%;
-    }
-    
-    .workflow-grid {
-        grid-template-columns: 1fr;
-        gap: calc(0.6rem + 0.2vw);
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .workflow-title {
-        font-size: calc(1rem + 0.25vw);
-        margin-bottom: calc(1rem + 0.4vw);
-    }
-    
-    .workflow-card {
-        padding: calc(0.4rem + 0.2vw);
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .workflow-card-header {
-        gap: calc(0.3rem + 0.1vw);
-        margin-bottom: calc(0.5rem + 0.2vw);
-    }
-    
-    .workflow-icon {
-        width: calc(24px + 0.4vw);
-        height: calc(24px + 0.4vw);
-    }
-    
-    .workflow-card-title {
-        font-size: calc(10px + 0.12vw);
-    }
-    
-    .workflow-card-text {
-        font-size: calc(7px + 0.08vw);
-    }
-}
 
-/* Components Section Styles */
-.components-section {
+
+
+
+/* Founder Section */
+.founder-section {
     position: relative;
-    padding: calc(4rem + 3vw) calc(1.5rem + 1vw);
-    z-index: 2;
-    overflow: hidden;
-}
-
-.components-section::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(600px + 15vw);
-    height: calc(300px + 8vw);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #7902C0 50%, rgba(0, 0, 0, 0) 100%);
-    opacity: 0.25;
-    filter: blur(calc(50px + 1.5vw));
-    pointer-events: none;
-    z-index: -1;
-}
-
-.components-container {
-    max-width: calc(1200px + 15vw);
-    margin: 0 auto;
+    z-index: 10;
+    padding: calc(4rem + 3vw) calc(1rem + 1vw);
+    background: transparent;
     text-align: center;
 }
 
-.components-title {
+.founder-container {
+    max-width: calc(800px + 10vw);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(1.5rem + 1vw);
+}
+
+.founder-name {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 300;
+    font-size: calc(0.9rem + 0.2vw);
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.founder-title {
     font-family: 'Stolzl', Arial, sans-serif;
     font-weight: 400;
-    font-size: calc(2rem + 1vw);
+    font-size: calc(2.5rem + 1.5vw);
+    line-height: 120%;
+    text-align: center;
+    background: linear-gradient(90deg, #707070 0%, #FEFEFE 50%, #707070 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    letter-spacing: 0%;
+}
+
+.founder-image {
+    width: 100%;
+    max-width: calc(200px + 40vw);
+    height: calc(80px + 17vw);
+    position: relative;
+    border-radius: calc(8px + 0.3vw);
+    overflow: hidden;
+    box-shadow: 0 calc(20px + 2vw) calc(60px + 5vw) rgba(0, 0, 0, 0.3);
+}
+
+.founder-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: calc(8px + 0.3vw);
+}
+
+/* Info Sections */
+.info-sections {
+    position: relative;
+    z-index: 10;
+    padding: calc(4rem + 3vw) calc(1rem + 1vw);
+    background: transparent;
+}
+
+.info-sections-container {
+    max-width: calc(1200px + 10vw);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: calc(4rem + 3vw);
+}
+
+.info-section-block {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: calc(3rem + 2vw);
+    align-items: start;
+    position: relative;
+    padding-bottom: calc(4rem + 3vw);
+}
+
+.info-section-block:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: calc(2rem + 1.5vw);
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(110, 110, 110, 1);
+}
+
+.info-section-block:last-child {
+    padding-bottom: 0;
+}
+
+/* Для первой секции добавляем линию даже для единственного блока */
+.info-sections.first-section .info-section-block {
+    padding-bottom: calc(4rem + 3vw);
+}
+
+.info-sections.first-section .info-section-block::after {
+    content: '';
+    position: absolute;
+    bottom: calc(2rem + 1.5vw);
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(110, 110, 110, 1);
+}
+
+.info-section-title {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 400;
+    font-size: calc(1.8rem + 1vw);
     line-height: 120%;
     background: linear-gradient(90deg, #707070 0%, #FEFEFE 50%, #707070 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: calc(1.5rem + 0.8vw);
+    margin: 0;
     letter-spacing: 0%;
 }
 
-.components-subtitle {
+.info-section-content {
     font-family: 'Stolzl', Arial, sans-serif;
     font-weight: 300;
-    font-size: calc(1rem + 0.3vw);
-    line-height: 140%;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 auto calc(3rem + 2vw) auto;
-    max-width: calc(600px + 10vw);
-    letter-spacing: 0%;
-}
-
-.components-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: calc(2rem + 1.5vw);
-    max-width: calc(1100px + 10vw);
-    margin: 0 auto;
-}
-
-.component-card {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.component-card-header {
-    display: flex;
-    align-items: center;
-    gap: calc(0.8rem + 0.3vw);
-    margin-bottom: calc(1rem + 0.5vw);
-}
-
-.component-icon {
-    width: calc(48px + 1.5vw);
-    height: calc(48px + 1.5vw);
-    flex-shrink: 0;
-}
-
-.component-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.component-card-title {
-    font-family: 'Stolzl', Arial, sans-serif;
-    font-weight: 400;
-    font-size: calc(16px + 0.3vw);
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: rgba(255, 255, 255, 1);
-    margin: 0;
-}
-
-.component-card-text {
-    font-family: 'Stolzl', Arial, sans-serif;
-    font-weight: 400;
-    font-size: calc(12px + 0.2vw);
-    line-height: 140%;
-    letter-spacing: 0%;
+    font-size: calc(0.9rem + 0.2vw);
+    line-height: 150%;
     color: rgba(110, 110, 110, 1);
-    margin: 0;
+    letter-spacing: 0.005em;
 }
 
-/* Workflow Section Styles */
-.workflow-section {
-    position: relative;
-    padding: calc(4rem + 3vw) calc(1.5rem + 1vw);
-    z-index: 3;
-    overflow: visible;
+.info-section-content p {
+    margin: 0 0 calc(1rem + 0.3vw) 0;
 }
 
-.workflow-section::before {
-    content: '';
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(400px + 10vw);
-    height: calc(200px + 5vw);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(121, 2, 192, 0.8) 40%, rgba(121, 2, 192, 0.4) 60%, rgba(0, 0, 0, 0) 100%);
-    opacity: 0.15;
-    filter: blur(calc(40px + 1.5vw));
-    pointer-events: none;
-    z-index: -1;
-}
-
-.workflow-container {
-    max-width: calc(1400px + 15vw);
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 0 calc(0.5rem + 0.2vw);
-}
-
-.workflow-title {
-    font-family: 'Stolzl', Arial, sans-serif;
-    font-weight: 400;
-    font-size: calc(2rem + 1vw);
-    line-height: 120%;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: calc(3rem + 2vw);
-    letter-spacing: 0%;
-}
-
-.workflow-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: calc(1.5rem + 1vw);
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.workflow-card {
-    padding: calc(1.5rem + 1vw);
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    min-height: auto;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-}
-
-.workflow-card-header {
-    display: flex;
-    align-items: center;
-    gap: calc(0.8rem + 0.3vw);
-    margin-bottom: calc(1rem + 0.5vw);
-}
-
-.workflow-icon {
-    width: calc(40px + 1.2vw);
-    height: calc(40px + 1.2vw);
-    flex-shrink: 0;
-}
-
-.workflow-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.workflow-card-title {
-    font-family: 'Stolzl', Arial, sans-serif;
-    font-weight: 400;
-    font-size: calc(14px + 0.25vw);
-    line-height: 110%;
-    letter-spacing: 0%;
-    color: rgba(255, 255, 255, 1);
-    margin: 0;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-}
-
-.workflow-card-text {
-    font-family: 'Stolzl', Arial, sans-serif;
-    font-weight: 300;
-    font-size: calc(11px + 0.18vw);
-    line-height: 140%;
-    letter-spacing: 0%;
-    color: rgba(140, 140, 140, 1);
-    margin: 0;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
+.info-section-content p:last-child {
+    margin-bottom: 0;
 }
 
 /* Main Page Hero Section with Side Glow */
@@ -1695,7 +1581,7 @@ body::after {
     content: '';
     position: absolute;
     top: 40%;
-    left: 15%;
+    left: 8%;
     transform: translate(-50%, -50%);
     width: calc(600px + 15vw);
     height: calc(300px + 8vw);
@@ -1844,7 +1730,7 @@ body::after {
     font-family: 'Stolzl', Arial, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 16px;
+    font-size: calc(0.8rem + 0.3vw);
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
@@ -2134,7 +2020,7 @@ body::after {
 }
 
 .footer-container {
-    max-width: 800px;
+    max-width: calc(400px + 30vw);
     margin: 0 auto;
     padding: calc(2rem + 1.5vw) calc(1.5rem + 1vw);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2265,7 +2151,7 @@ body::after {
     font-family: 'Stolzl', Arial, sans-serif;
     font-weight: 100;
     font-style: normal;
-    font-size: 16px;
+    font-size: calc(0.8rem + 0.3vw);
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
@@ -2307,3 +2193,1213 @@ body::after {
         padding-top: 0;
     }
 }
+
+/* Privacy Policy Page */
+.privacy-content {
+    position: relative;
+    z-index: 10;
+    padding: calc(2rem + 2vw) calc(1rem + 1vw);
+    background: transparent;
+}
+
+.privacy-container {
+    max-width: calc(800px + 20vw);
+    margin: 0 auto;
+}
+
+.privacy-title {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 400;
+    font-size: calc(2.5rem + 2vw);
+    line-height: 120%;
+    text-align: center;
+    background: linear-gradient(90deg, #707070 0%, #FEFEFE 60%, #707070 120%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 calc(3rem + 2vw) 0;
+    letter-spacing: -0.01em;
+}
+
+.privacy-section {
+    margin-bottom: calc(2.5rem + 1.5vw);
+}
+
+.privacy-section-title {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 400;
+    font-size: calc(1.2rem + 0.8vw);
+    line-height: 130%;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 calc(1rem + 0.5vw) 0;
+    letter-spacing: -0.005em;
+}
+
+.privacy-text {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 300;
+    font-size: calc(0.9rem + 0.3vw);
+    line-height: 160%;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 calc(1rem + 0.3vw) 0;
+    letter-spacing: 0.005em;
+}
+
+.privacy-list {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 300;
+    font-size: calc(0.9rem + 0.3vw);
+    line-height: 160%;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 calc(1rem + 0.3vw) 0;
+    padding-left: calc(1.5rem + 0.5vw);
+    letter-spacing: 0.005em;
+}
+
+.privacy-list li {
+    margin-bottom: calc(0.5rem + 0.2vw);
+}
+
+@media (max-width: 1024px) {
+    .privacy-content {
+        padding: calc(1.5rem + 1.5vw) calc(1rem + 0.8vw);
+    }
+    
+    .privacy-container {
+        max-width: 100%;
+    }
+    
+    .privacy-title {
+        font-size: calc(2rem + 1.5vw);
+        margin-bottom: calc(2.5rem + 1.5vw);
+    }
+    
+    .privacy-section-title {
+        font-size: calc(1.1rem + 0.6vw);
+    }
+    
+    .privacy-text,
+    .privacy-list {
+        font-size: calc(0.85rem + 0.25vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .privacy-content {
+        padding: calc(1.2rem + 1vw) calc(1rem + 0.5vw);
+    }
+    
+    .privacy-title {
+        font-size: calc(1.8rem + 1.2vw);
+        margin-bottom: calc(2rem + 1vw);
+    }
+    
+    .privacy-section {
+        margin-bottom: calc(2rem + 1vw);
+    }
+    
+    .privacy-section-title {
+        font-size: calc(1rem + 0.5vw);
+        margin-bottom: calc(0.8rem + 0.4vw);
+    }
+    
+    .privacy-text,
+    .privacy-list {
+        font-size: calc(0.8rem + 0.2vw);
+        line-height: 150%;
+    }
+    
+    .privacy-list {
+        padding-left: calc(1.2rem + 0.3vw);
+    }
+}
+
+@media (max-width: 480px) {
+    .privacy-content {
+        padding: calc(1rem + 0.8vw) calc(0.8rem + 0.3vw);
+    }
+    
+    .privacy-title {
+        font-size: calc(1.5rem + 1vw);
+        margin-bottom: calc(1.5rem + 0.8vw);
+    }
+    
+    .privacy-section {
+        margin-bottom: calc(1.5rem + 0.8vw);
+    }
+    
+    .privacy-section-title {
+        font-size: calc(0.9rem + 0.4vw);
+        margin-bottom: calc(0.6rem + 0.3vw);
+    }
+    
+    .privacy-text,
+    .privacy-list {
+        font-size: calc(0.75rem + 0.15vw);
+        line-height: 145%;
+    }
+    
+    .privacy-list {
+        padding-left: calc(1rem + 0.2vw);
+    }
+    
+    .privacy-list li {
+        margin-bottom: calc(0.4rem + 0.15vw);
+    }
+}
+
+@media (max-width: 320px) {
+    .privacy-content {
+        padding: calc(0.8rem + 0.5vw) calc(0.5rem + 0.2vw);
+    }
+    
+    .privacy-title {
+        font-size: calc(1.3rem + 0.8vw);
+        margin-bottom: calc(1.2rem + 0.6vw);
+    }
+    
+    .privacy-section {
+        margin-bottom: calc(1.2rem + 0.6vw);
+    }
+    
+    .privacy-section-title {
+        font-size: calc(0.8rem + 0.3vw);
+        margin-bottom: calc(0.5rem + 0.2vw);
+    }
+    
+    .privacy-text,
+    .privacy-list {
+        font-size: calc(0.7rem + 0.12vw);
+        line-height: 140%;
+    }
+    
+    .privacy-list {
+        padding-left: calc(0.8rem + 0.15vw);
+    }
+}
+
+/* Terms Conditions Page */
+.terms-content {
+    position: relative;
+    z-index: 10;
+    padding: calc(2rem + 2vw) calc(1rem + 1vw);
+    background: transparent;
+}
+
+.terms-container {
+    max-width: calc(800px + 20vw);
+    margin: 0 auto;
+}
+
+.terms-title {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 400;
+    font-size: calc(2.5rem + 2vw);
+    line-height: 120%;
+    text-align: center;
+    background: linear-gradient(90deg, #707070 0%, #FEFEFE 60%, #707070 120%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 calc(3rem + 2vw) 0;
+    letter-spacing: -0.01em;
+}
+
+.terms-section {
+    margin-bottom: calc(2.5rem + 1.5vw);
+}
+
+.terms-section-title {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 400;
+    font-size: calc(1.2rem + 0.8vw);
+    line-height: 130%;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 calc(1rem + 0.5vw) 0;
+    letter-spacing: -0.005em;
+}
+
+.terms-text {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 300;
+    font-size: calc(0.9rem + 0.3vw);
+    line-height: 160%;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 calc(1rem + 0.3vw) 0;
+    letter-spacing: 0.005em;
+}
+
+@media (max-width: 1024px) {
+    .terms-content {
+        padding: calc(1.5rem + 1.5vw) calc(1rem + 0.8vw);
+    }
+    
+    .terms-container {
+        max-width: 100%;
+    }
+    
+    .terms-title {
+        font-size: calc(2rem + 1.5vw);
+        margin-bottom: calc(2.5rem + 1.5vw);
+    }
+    
+    .terms-section-title {
+        font-size: calc(1.1rem + 0.6vw);
+    }
+    
+    .terms-text {
+        font-size: calc(0.85rem + 0.25vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .terms-content {
+        padding: calc(1.2rem + 1vw) calc(1rem + 0.5vw);
+    }
+    
+    .terms-title {
+        font-size: calc(1.8rem + 1.2vw);
+        margin-bottom: calc(2rem + 1vw);
+    }
+    
+    .terms-section {
+        margin-bottom: calc(2rem + 1vw);
+    }
+    
+    .terms-section-title {
+        font-size: calc(1rem + 0.5vw);
+        margin-bottom: calc(0.8rem + 0.4vw);
+    }
+    
+    .terms-text {
+        font-size: calc(0.8rem + 0.2vw);
+        line-height: 150%;
+    }
+}
+
+@media (max-width: 480px) {
+    .terms-content {
+        padding: calc(1rem + 0.8vw) calc(0.8rem + 0.3vw);
+    }
+    
+    .terms-title {
+        font-size: calc(1.5rem + 1vw);
+        margin-bottom: calc(1.5rem + 0.8vw);
+    }
+    
+    .terms-section {
+        margin-bottom: calc(1.5rem + 0.8vw);
+    }
+    
+    .terms-section-title {
+        font-size: calc(0.9rem + 0.4vw);
+        margin-bottom: calc(0.6rem + 0.3vw);
+    }
+    
+    .terms-text {
+        font-size: calc(0.75rem + 0.15vw);
+        line-height: 145%;
+    }
+}
+
+@media (max-width: 320px) {
+    .terms-content {
+        padding: calc(0.8rem + 0.5vw) calc(0.5rem + 0.2vw);
+    }
+    
+    .terms-title {
+        font-size: calc(1.3rem + 0.8vw);
+        margin-bottom: calc(1.2rem + 0.6vw);
+    }
+    
+    .terms-section {
+        margin-bottom: calc(1.2rem + 0.6vw);
+    }
+    
+    .terms-section-title {
+        font-size: calc(0.8rem + 0.3vw);
+        margin-bottom: calc(0.5rem + 0.2vw);
+    }
+    
+    .terms-text {
+        font-size: calc(0.7rem + 0.12vw);
+        line-height: 140%;
+    }
+}
+
+/* WhatsApp Landing Page Styles */
+.whatsapp-card {
+    background: linear-gradient(180deg, #0C0212 0%, #040504 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: calc(1rem + 0.5vw);
+    padding: calc(2rem + 1.5vw);
+    margin-top: calc(2rem + 1vw);
+    max-width: calc(700px + 15vw);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: calc(2rem + 1vw);
+}
+
+.whatsapp-card-content {
+    flex: 1;
+    text-align: left;
+}
+
+.whatsapp-card-title {
+    font-size: calc(1.2rem + 0.6vw);
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: calc(0.6rem + 0.3vw);
+}
+
+.whatsapp-card-description {
+    font-size: calc(0.8rem + 0.25vw);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 150%;
+    margin-bottom: 0;
+}
+
+.whatsapp-card-button {
+    flex-shrink: 0;
+}
+
+.whatsapp-note {
+    font-size: calc(0.6rem + 0.15vw);
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: calc(0.8rem + 0.4vw);
+    line-height: 140%;
+    text-align: center;
+}
+
+.whatsapp-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.whatsapp-link:hover {
+    color: #ffffff;
+}
+
+/* Responsive Styles for WhatsApp Card */
+@media (max-width: 1024px) {
+    .whatsapp-card {
+        padding: calc(1.5rem + 1.2vw);
+        max-width: calc(600px + 12vw);
+        border-radius: calc(0.8rem + 0.4vw);
+        margin-top: calc(1.8rem + 0.8vw);
+        gap: calc(1.5rem + 0.8vw);
+    }
+    
+    .whatsapp-card-title {
+        font-size: calc(1.1rem + 0.5vw);
+        margin-bottom: calc(0.5rem + 0.25vw);
+    }
+    
+    .whatsapp-card-description {
+        font-size: calc(0.75rem + 0.2vw);
+    }
+    
+    .whatsapp-note {
+        font-size: calc(0.55rem + 0.12vw);
+        margin-top: calc(0.7rem + 0.35vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-card {
+        padding: calc(1.2rem + 1vw);
+        max-width: calc(500px + 8vw);
+        border-radius: calc(0.6rem + 0.3vw);
+        margin-top: calc(1.5rem + 0.6vw);
+        flex-direction: column;
+        gap: calc(1.2rem + 0.6vw);
+        text-align: center;
+    }
+    
+    .whatsapp-card-content {
+        text-align: center;
+    }
+    
+    .whatsapp-card-title {
+        font-size: calc(1rem + 0.4vw);
+        margin-bottom: calc(0.4rem + 0.2vw);
+    }
+    
+    .whatsapp-card-description {
+        font-size: calc(0.7rem + 0.15vw);
+    }
+    
+    .whatsapp-note {
+        font-size: calc(0.5rem + 0.1vw);
+        margin-top: calc(0.6rem + 0.25vw);
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-card {
+        padding: calc(1rem + 0.8vw);
+        max-width: calc(400px + 10vw);
+        border-radius: calc(0.5rem + 0.25vw);
+        margin-top: calc(1.2rem + 0.5vw);
+        flex-direction: column;
+        gap: calc(1rem + 0.5vw);
+        text-align: center;
+    }
+    
+    .whatsapp-card-content {
+        text-align: center;
+    }
+    
+    .whatsapp-card-title {
+        font-size: calc(0.9rem + 0.3vw);
+        margin-bottom: calc(0.35rem + 0.15vw);
+    }
+    
+    .whatsapp-card-description {
+        font-size: calc(0.65rem + 0.12vw);
+    }
+    
+    .whatsapp-note {
+        font-size: calc(0.45rem + 0.08vw);
+        margin-top: calc(0.5rem + 0.2vw);
+    }
+}
+
+@media (max-width: 320px) {
+    .whatsapp-card {
+        padding: calc(0.8rem + 0.6vw);
+        max-width: calc(320px + 8vw);
+        border-radius: calc(0.4rem + 0.2vw);
+        margin-top: calc(1rem + 0.4vw);
+        flex-direction: column;
+        gap: calc(0.8rem + 0.4vw);
+        text-align: center;
+    }
+    
+    .whatsapp-card-content {
+        text-align: center;
+    }
+    
+    .whatsapp-card-title {
+        font-size: calc(0.8rem + 0.25vw);
+        margin-bottom: calc(0.25rem + 0.12vw);
+    }
+    
+    .whatsapp-card-description {
+        font-size: calc(0.6rem + 0.1vw);
+    }
+    
+    .whatsapp-note {
+        font-size: calc(0.4rem + 0.06vw);
+        margin-top: calc(0.4rem + 0.15vw);
+    }
+}
+
+/* Waitlist Benefits Section */
+.waitlist-benefits-section {
+    background: #0a0a0a;
+    padding: calc(4rem + 2vw) 0;
+    position: relative;
+}
+
+.waitlist-benefits-container {
+    max-width: calc(1000px + 20vw);
+    margin: 0 auto;
+    padding: 0 calc(1rem + 1vw);
+    text-align: center;
+}
+
+.waitlist-benefits-title {
+    font-size: calc(2rem + 1.5vw);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: calc(3rem + 1.5vw);
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: calc(2rem + 1vw);
+    margin-bottom: calc(3rem + 1.5vw);
+}
+
+.benefit-item {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    text-align: left;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.benefit-item:hover {
+    transform: translateY(calc(-3px - 0.1vw));
+}
+
+.benefit-item:hover .benefit-icon img {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.benefit-item-header {
+    display: flex;
+    align-items: center;
+    gap: calc(0.8rem + 0.3vw);
+    margin-bottom: calc(1rem + 0.4vw);
+}
+
+.benefit-icon {
+    width: calc(48px + 1.5vw);
+    height: calc(48px + 1.5vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.benefit-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.benefit-item-title {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 400;
+    font-size: calc(16px + 0.3vw);
+    line-height: 100%;
+    color: #FFFFFF;
+    margin: 0;
+    letter-spacing: 0%;
+}
+
+.benefit-item-text {
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 400;
+    font-size: calc(12px + 0.2vw);
+    line-height: 120%;
+    color: rgba(110, 110, 110, 1);
+    margin: 0;
+    letter-spacing: 0%;
+}
+
+/* FAQ Section */
+.faq-section {
+    background: #0a0a0a;
+    padding: calc(4rem + 2vw) 0;
+}
+
+.faq-container {
+    max-width: calc(800px + 15vw);
+    margin: 0 auto;
+    padding: 0 calc(1rem + 1vw);
+}
+
+.faq-title {
+    font-size: calc(2rem + 1.5vw);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: calc(3rem + 1.5vw);
+    text-align: center;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: calc(1rem + 0.5vw);
+}
+
+.faq-item {
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.faq-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: white;
+}
+
+.faq-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: white;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc(1.2rem + 0.8vw);
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: transparent;
+}
+
+.faq-question span:first-child {
+    font-size: calc(1rem + 0.4vw);
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.faq-toggle {
+    font-size: calc(1.2rem + 0.6vw);
+    color: rgba(182, 150, 255, 1);
+    font-weight: 300;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+    color: rgba(182, 150, 255, 1);
+}
+
+.faq-answer {
+    padding: 0 calc(1.2rem + 0.8vw) calc(1.2rem + 0.8vw);
+    background: transparent;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-answer p {
+    font-size: calc(0.9rem + 0.3vw);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 160%;
+    margin: 0;
+}
+
+/* Responsive Styles for Waitlist & FAQ */
+@media (max-width: 1024px) {
+    .waitlist-benefits-section,
+    .faq-section {
+        padding: calc(3rem + 1.5vw) 0;
+    }
+    
+    .waitlist-benefits-container {
+        max-width: calc(900px + 15vw);
+        padding: 0 calc(0.8rem + 0.8vw);
+    }
+    
+    .waitlist-benefits-title,
+    .faq-title {
+        font-size: calc(1.8rem + 1.2vw);
+        margin-bottom: calc(2.5rem + 1.2vw);
+    }
+    
+    .benefits-grid {
+        gap: calc(1.5rem + 0.8vw);
+        margin-bottom: calc(2.5rem + 1.2vw);
+    }
+    
+    .benefit-item-header {
+        gap: calc(0.7rem + 0.25vw);
+        margin-bottom: calc(0.8rem + 0.3vw);
+    }
+    
+    .benefit-icon {
+        width: calc(42px + 1.2vw);
+        height: calc(42px + 1.2vw);
+    }
+    
+    .benefit-item-title {
+        font-size: calc(14px + 0.25vw);
+    }
+    
+    .benefit-item-text {
+        font-size: calc(11px + 0.15vw);
+    }
+    
+    .faq-container {
+        max-width: calc(700px + 12vw);
+        padding: 0 calc(0.8rem + 0.8vw);
+    }
+    
+    .faq-question {
+        padding: calc(1rem + 0.6vw);
+    }
+    
+    .faq-question span:first-child {
+        font-size: calc(0.9rem + 0.3vw);
+    }
+    
+    .faq-toggle {
+        font-size: calc(1.1rem + 0.5vw);
+    }
+    
+    .faq-answer {
+        padding: 0 calc(1rem + 0.6vw) calc(1rem + 0.6vw);
+    }
+    
+    .faq-answer p {
+        font-size: calc(0.85rem + 0.25vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .waitlist-benefits-section,
+    .faq-section {
+        padding: calc(2.5rem + 1vw) 0;
+    }
+    
+    .waitlist-benefits-container {
+        max-width: calc(600px + 10vw);
+        padding: 0 calc(0.6rem + 0.6vw);
+    }
+    
+    .waitlist-benefits-title,
+    .faq-title {
+        font-size: calc(1.5rem + 1vw);
+        margin-bottom: calc(2rem + 1vw);
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: calc(1.2rem + 0.6vw);
+        margin-bottom: calc(2rem + 1vw);
+    }
+    
+    .benefit-item-header {
+        gap: calc(0.6rem + 0.2vw);
+        margin-bottom: calc(0.7rem + 0.25vw);
+    }
+    
+    .benefit-icon {
+        width: calc(38px + 1vw);
+        height: calc(38px + 1vw);
+    }
+    
+    .benefit-item-title {
+        font-size: calc(13px + 0.2vw);
+    }
+    
+    .benefit-item-text {
+        font-size: calc(10px + 0.12vw);
+    }
+    
+    .faq-container {
+        max-width: calc(600px + 10vw);
+        padding: 0 calc(0.6rem + 0.6vw);
+    }
+    
+    .faq-question {
+        padding: calc(0.8rem + 0.5vw);
+    }
+    
+    .faq-question span:first-child {
+        font-size: calc(0.85rem + 0.25vw);
+    }
+    
+    .faq-toggle {
+        font-size: calc(1rem + 0.4vw);
+    }
+    
+    .faq-answer {
+        padding: 0 calc(0.8rem + 0.5vw) calc(0.8rem + 0.5vw);
+    }
+    
+    .faq-answer p {
+        font-size: calc(0.8rem + 0.2vw);
+    }
+}
+
+@media (max-width: 480px) {
+    .waitlist-benefits-section,
+    .faq-section {
+        padding: calc(2rem + 0.8vw) 0;
+    }
+    
+    .waitlist-benefits-container {
+        max-width: calc(400px + 8vw);
+        padding: 0 calc(0.5rem + 0.4vw);
+    }
+    
+    .waitlist-benefits-title,
+    .faq-title {
+        font-size: calc(1.3rem + 0.8vw);
+        margin-bottom: calc(1.5rem + 0.8vw);
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: calc(1rem + 0.5vw);
+        margin-bottom: calc(1.5rem + 0.8vw);
+    }
+    
+    .benefit-item-header {
+        gap: calc(0.5rem + 0.15vw);
+        margin-bottom: calc(0.6rem + 0.2vw);
+    }
+    
+    .benefit-icon {
+        width: calc(34px + 0.8vw);
+        height: calc(34px + 0.8vw);
+    }
+    
+    .benefit-item-title {
+        font-size: calc(12px + 0.15vw);
+    }
+    
+    .benefit-item-text {
+        font-size: calc(9px + 0.1vw);
+    }
+    
+    .faq-container {
+        max-width: calc(400px + 8vw);
+        padding: 0 calc(0.5rem + 0.4vw);
+    }
+    
+    .faq-question {
+        padding: calc(0.7rem + 0.4vw);
+    }
+    
+    .faq-question span:first-child {
+        font-size: calc(0.8rem + 0.2vw);
+    }
+    
+    .faq-toggle {
+        font-size: calc(0.9rem + 0.3vw);
+    }
+    
+    .faq-answer {
+        padding: 0 calc(0.7rem + 0.4vw) calc(0.7rem + 0.4vw);
+    }
+    
+    .faq-answer p {
+        font-size: calc(0.75rem + 0.15vw);
+    }
+}
+
+@media (max-width: 320px) {
+    .waitlist-benefits-section,
+    .faq-section {
+        padding: calc(1.5rem + 0.6vw) 0;
+    }
+    
+    .waitlist-benefits-container {
+        max-width: calc(300px + 5vw);
+        padding: 0 calc(0.4rem + 0.3vw);
+    }
+    
+    .waitlist-benefits-title,
+    .faq-title {
+        font-size: calc(1.1rem + 0.6vw);
+        margin-bottom: calc(1.2rem + 0.6vw);
+    }
+    
+    .benefits-grid {
+        gap: calc(0.8rem + 0.4vw);
+        margin-bottom: calc(1.2rem + 0.6vw);
+    }
+    
+    .benefit-item-header {
+        gap: calc(0.4rem + 0.1vw);
+        margin-bottom: calc(0.5rem + 0.15vw);
+    }
+    
+    .benefit-icon {
+        width: calc(30px + 0.6vw);
+        height: calc(30px + 0.6vw);
+    }
+    
+    .benefit-item-title {
+        font-size: calc(11px + 0.12vw);
+    }
+    
+    .benefit-item-text {
+        font-size: calc(8px + 0.08vw);
+    }
+    
+    .faq-container {
+        max-width: calc(300px + 5vw);
+        padding: 0 calc(0.4rem + 0.3vw);
+    }
+    
+    .faq-question {
+        padding: calc(0.6rem + 0.3vw);
+    }
+    
+    .faq-question span:first-child {
+        font-size: calc(0.75rem + 0.15vw);
+    }
+    
+    .faq-toggle {
+        font-size: calc(0.8rem + 0.25vw);
+    }
+    
+    .faq-answer {
+        padding: 0 calc(0.6rem + 0.3vw) calc(0.6rem + 0.3vw);
+    }
+    
+    .faq-answer p {
+        font-size: calc(0.7rem + 0.12vw);
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(180deg, #0F0C10 0%, #130D1B 100%);
+    margin: calc(2vh + 1vw) auto;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: calc(0.5rem + 0.8vw);
+    width: calc(80vw + 5%);
+    max-width: calc(300px + 40vw);
+    box-shadow: 0 calc(10px + 1vw) calc(30px + 3vw) rgba(0, 0, 0, 0.5);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close {
+    color: rgba(255, 255, 255, 0.6);
+    float: right;
+    font-size: calc(1rem + 1vw);
+    font-weight: bold;
+    position: absolute;
+    right: calc(0.5rem + 1vw);
+    top: calc(0.5rem + 1vw);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1001;
+}
+
+.close:hover,
+.close:focus {
+    color: rgba(182, 150, 255, 1);
+    text-decoration: none;
+}
+
+.modal-header {
+    padding: calc(1rem + 1vw) calc(1rem + 1.5vw) calc(0.5rem + 0.5vw);
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h2 {
+    font-size: calc(0.9rem + 1.2vw);
+    font-weight: 700;
+    background: linear-gradient(90deg, #707070 0%, #FEFEFE 50%, #707070 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    font-family: 'Stolzl', sans-serif;
+}
+
+.modal-header p {
+    font-size: calc(0.9rem + 0.3vw);
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    line-height: 150%;
+}
+
+.waitlist-form {
+    padding: calc(1rem + 1.2vw);
+}
+
+.form-group {
+    margin-bottom: calc(0.6rem + 0.8vw);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select {
+    width: 100%;
+    padding: calc(0.6rem + 0.6vw);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: calc(0.3rem + 0.4vw);
+    color: rgba(255, 255, 255, 1);
+    font-size: calc(0.8rem + 0.5vw);
+    font-family: 'Stolzl', sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: rgba(182, 150, 255, 1);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(182, 150, 255, 0.1);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Phone input with flag */
+.phone-group {
+    position: relative;
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: calc(0.3rem + 0.5vw);
+    transition: all 0.3s ease;
+    padding: calc(0.1rem + 0.3vw);
+}
+
+.phone-input:focus-within {
+    border-color: rgba(182, 150, 255, 1);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(182, 150, 255, 0.1);
+}
+
+.flag-icon {
+    width: calc(1.5rem + 2.5vw);
+    height: calc(1rem + 1.8vw);
+    object-fit: cover;
+    margin: 0 calc(0.5rem + 0.8vw);
+    padding-right: calc(0.5rem + 0.8vw);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.phone-input input {
+    border: none;
+    background: transparent;
+    padding: calc(0.5rem + 0.8vw) calc(0.3rem + 0.5vw);
+    flex: 1;
+    font-size: calc(0.8rem + 0.6vw);
+    color: rgba(255, 255, 255, 1);
+}
+
+.phone-input input:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+/* Select dropdown styling */
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right calc(0.5rem + 0.2vw) center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: calc(2.5rem + 0.5vw);
+}
+
+.form-group select option {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: calc(0.5rem + 0.2vw);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(0.5rem + 0.2vw);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: rgba(182, 150, 255, 1);
+    transform: scale(1.2);
+    flex-shrink: 0;
+    margin-top: calc(0.1rem + 0.05vw);
+}
+
+.checkbox-group label {
+    font-size: calc(0.8rem + 0.25vw);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 140%;
+    cursor: pointer;
+    margin: 0;
+}
+
+.submit-btn {
+    width: 100%;
+    font-family: 'Stolzl', Arial, sans-serif;
+    font-weight: 500;
+    font-size: calc(0.8rem + 0.5vw);
+    padding: calc(0.6rem + 0.6vw) calc(1rem + 1vw);
+    background: radial-gradient(100% 100% at 50% 0%, #7902C0 30%, #12011E 120%);
+    color: white;
+    border: none;
+    border-radius: calc(4px + 0.4vw);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
+    position: relative;
+    white-space: nowrap;
+}
+
+.submit-btn:hover {
+    background: radial-gradient(100% 100% at 50% 0%, #8B03E6 30%, #1A0228 120%);
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.modal-footer {
+    padding: calc(1rem + 0.5vw) calc(1.5rem + 1vw);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.modal-footer p {
+    font-size: calc(0.75rem + 0.2vw);
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+/* Adaptive styles are now handled by calc() formulas above */
+
+/* All styles are now responsive through calc() formulas */
