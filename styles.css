@@ -373,6 +373,9 @@ body::after {
     margin: 0 auto;
     text-align: center;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .target-audience-title {
@@ -407,6 +410,9 @@ body::after {
     gap: calc(1.5rem + 1vw);
     margin-bottom: calc(4rem + 2vw);
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(1200px + 20vw);
 }
 
 /* Для секций с 3 элементами */
@@ -475,13 +481,13 @@ body::after {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr)!important;
     gap: calc(2rem + 1vw);
     margin-bottom: calc(1rem + 0.5vw);
-    max-width: calc(900px + 10vw);
+    max-width: calc(1200px + 20vw);
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    justify-content: center;
 }
 
 .benefit-card {
@@ -682,6 +688,7 @@ body::after {
     
     .benefit-card {
         padding: calc(1rem + 0.5vw);
+        max-width: 90vw!important
     }
     
 
@@ -2041,6 +2048,7 @@ body::after {
     letter-spacing: 0.02em;
     position: relative;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .cta-button-secondary:hover {
@@ -2096,7 +2104,7 @@ body::after {
 .footer-link {
     font-family: 'Stolzl', Arial, sans-serif;
     font-weight: 100;
-    font-size: calc(0.8rem + 0.3vw);
+    font-size: calc(0.5rem + 0.3vw);
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -2765,6 +2773,10 @@ body::after {
     grid-template-columns: repeat(4, 1fr);
     gap: calc(2rem + 1vw);
     margin-bottom: calc(3rem + 1.5vw);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(1000px + 20vw);
+    justify-content: center;
 }
 
 .benefit-item {
