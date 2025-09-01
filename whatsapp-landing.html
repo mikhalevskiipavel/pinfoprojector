@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join WhatsApp Group - InfoAtlas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/Atlaslogo.png" alt="InfoAtlas" class="logo-image">
+                </a>
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="index.html" class="mobile-menu-link">Home</a>
+                <a href="atlas.html" class="mobile-menu-link">Atlas</a>
+                <a href="accelerator.html" class="mobile-menu-link">Accelerator</a>
+                <a href="terms.html" class="mobile-menu-link">Terms</a>
+                <a href="privacy.html" class="mobile-menu-link">Policy</a>
+                <a href="main.html" class="mobile-menu-link">Main</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="hero-section">
+            <h1 class="hero-title">
+                <div class="title-line-1">There is only one step left</div>
+                <div class="title-line-2">to secure your spot</div>
+            </h1>
+            <p class="hero-subtitle">Here's what you must do next...</p>
+            
+            <div class="whatsapp-card">
+                <div class="whatsapp-card-content">
+                    <h2 class="whatsapp-card-title">Join the WhatsApp Group</h2>
+                    <p class="whatsapp-card-description">
+                        We always open spots for Info Atlas inside the Waitlist Group before anywhere else, with special bonuses for the first ones to join.
+                    </p>
+                </div>
+                <div class="whatsapp-card-button">
+                    <a href="https://chat.whatsapp.com/BRt6CtsFxygGugXTtrvPXL?mode=ems_copy_c" target="_blank" class="cta-button">JOIN THE WHATSAPP GROUP</a>
+                    <p class="whatsapp-note">
+                        <a href="https://www.whatsapp.com/" target="_blank" class="whatsapp-link">Don't use WhatsApp? Download it.</a><br>
+                        It will be essential for our communication here.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="img/Atlaslogo.png" alt="InfoAtlas" class="footer-logo-image">
+                </a>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#" class="footer-link">Instagram</a>
+                <a href="#" class="footer-link">YouTube</a>
+            </div>
+            
+            <div class="footer-legal">
+                <a href="terms.html" class="footer-link">Terms conditions</a>
+                <a href="privacy.html" class="footer-link">Privacy</a>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>©2025 InfoAtlas. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Функция для переключения мобильного меню
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            } else {
+                mobileMenu.classList.add('active');
+                hamburgerMenu.classList.add('active');
+            }
+        }
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            
+            if (!hamburgerMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

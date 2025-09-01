@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoProjector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="InfoProjector" class="logo-image">
+                </a>
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="index.html" class="mobile-menu-link">Home</a>
+                <a href="atlas.html" class="mobile-menu-link">Atlas</a>
+                <a href="accelerator.html" class="mobile-menu-link">Accelerator</a>
+                <a href="terms.html" class="mobile-menu-link">Terms</a>
+                <a href="privacy.html" class="mobile-menu-link">Policy</a>
+                <a href="main.html" class="mobile-menu-link">Main</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="hero-section">
+            <h1 class="hero-title">
+                <div class="title-line-1">Launch & scale</div>
+                <div class="title-line-2">your <span id="dynamic-text">coaching</span> business</div>
+            </h1>
+            <p class="hero-subtitle">Let's take the first step together today!</p>
+            <a href="atlas.html" class="cta-button">Get Started</a>
+        </div>
+    </main>
+    
+    <section class="mission-section">
+        <div class="mission-container">
+            <h2 class="mission-section-title">Our mission</h2>
+            <h2 class="mission-title">To give you the tools you need<br>to reframe the way you live.</h2>
+            <p class="mission-description">We're on a mission to reframe the way you live – by delivering the best online business programs the world has ever seen. Our courses are built to be 100x more effective than traditional universities – at less than 1% of the cost. We also aim to deliver 10x more value than mentorships and programs priced at $50,000 or more. We're here to grow the next generation of info businesses.</p>
+        </div>
+    </section>
+    
+    <section class="content-section">
+        <div class="content-container">
+            <h3 class="video-title">For aspiring entrepreneurs:</h3>
+            <div class="video-player" onclick="playVideo()">
+                <video 
+                    id="main-video"
+                    class="video-element" 
+                    preload="metadata"
+                    poster="https://sample-videos.com/zip/10/jpg/jpg-1920x1080-1mb.jpg">
+                    <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4" type="video/mp4">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" type="video/mp4">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="play-button" id="play-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 5v14l11-7z" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <p class="section-text">For aspiring entrepreneurs:</p>
+            <a href="atlas.html" class="info-atlas"></a>
+            <p class="section-text">For those ready to break into seven figures</p>
+            <a href="accelerator.html" class="info-accelerator"></a>
+        </div>
+    </section>
+
+    <section class="glow-section">
+        <div class="profit-container">
+            <h2 class="profit-title">From Zero to Profit</h2>
+            <div class="profit-content">
+                <p class="profit-text">We help total beginners with zero experience start & scale their own info businesses to highly profitable levels. We also help six-figure info business owners scale into the seven-figure range.</p>
+                
+                <p class="profit-text">Very few people build their info business the right way. We place an emphasis on working "on" the business, not "in" it.</p>
+                
+                <p class="profit-text">We make sure our students build true companies, not temporary side hustles. The result? When done right, an info business is incredibly profitable and can be very hands-off.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="curved-glow"></div>
+        <div class="cta-container">
+            <h2 class="cta-title">Let's take the first step together.</h2>
+            
+            <div class="vertical-line"></div>
+            
+            <p class="cta-description">DM me 'INFO' and I'll show you how to build a $10K+/mo info business.</p>
+            
+            <div class="vertical-line"></div>
+            
+            <a href="atlas.html" class="cta-button-secondary">Get Started</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="InfoProjector" class="footer-logo-image">
+                </a>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#" class="footer-link">Instagram</a>
+                <a href="#" class="footer-link">YouTube</a>
+            </div>
+            
+            <div class="footer-legal">
+                <a href="terms.html" class="footer-link">Terms conditions</a>
+                <a href="privacy.html" class="footer-link">Privacy</a>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>©2025 InfoProjector. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Анимация смены текста
+        const dynamicText = document.getElementById('dynamic-text');
+        const texts = ['coaching', 'consulting', 'info'];
+        let currentIndex = 0;
+
+        function changeText() {
+            // Fade out только меняющееся слово
+            dynamicText.style.opacity = '0';
+            
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % texts.length;
+                dynamicText.textContent = texts[currentIndex];
+                // Fade in
+                dynamicText.style.opacity = '1';
+            }, 300);
+        }
+
+        // Добавляем CSS transition для плавной анимации
+        dynamicText.style.transition = 'opacity 0.3s ease-in-out';
+        
+        // Запускаем смену через 1.5 секунды, потом каждые 3 секунды
+        setTimeout(() => {
+            changeText();
+            setInterval(changeText, 3000);
+        }, 1500);
+
+        // Функция для запуска видео
+        function playVideo() {
+            const video = document.getElementById('main-video');
+            const playBtn = document.getElementById('play-btn');
+            
+            if (video.paused) {
+                video.play();
+                video.classList.add('playing');
+                playBtn.classList.add('hidden');
+                video.controls = true;
+            }
+        }
+
+        // Обработчик для возврата кнопки при паузе (только если элемент существует)
+        const mainVideo = document.getElementById('main-video');
+        if (mainVideo) {
+            mainVideo.addEventListener('pause', function() {
+                const video = document.getElementById('main-video');
+                const playBtn = document.getElementById('play-btn');
+                
+                if (video && playBtn) {
+                    video.classList.remove('playing');
+                    playBtn.classList.remove('hidden');
+                    video.controls = false;
+                }
+            });
+        }
+
+        // Функция для переключения мобильного меню
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            } else {
+                mobileMenu.classList.add('active');
+                hamburgerMenu.classList.add('active');
+            }
+        }
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            
+            if (!hamburgerMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

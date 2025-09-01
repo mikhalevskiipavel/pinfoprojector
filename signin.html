@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - InfoAtlas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="signin-page">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="InfoProjector" class="logo-image">
+                </a>
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="index.html" class="mobile-menu-link">Home</a>
+                <a href="atlas.html" class="mobile-menu-link">Atlas</a>
+                <a href="accelerator.html" class="mobile-menu-link">Accelerator</a>
+                <a href="terms.html" class="mobile-menu-link">Terms</a>
+                <a href="privacy.html" class="mobile-menu-link">Policy</a>
+                <a href="main.html" class="mobile-menu-link">Main</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="signin-container">
+        <div class="signin-form-wrapper">
+            <h1 class="signin-title">Sign in with you credentials</h1>
+            
+            <form id="signinForm" class="signin-form">
+                <div class="signin-form-group">
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+                </div>
+                
+                <div class="signin-checkbox-group">
+                    <label class="signin-checkbox-wrapper">
+                        <input type="checkbox" id="remember" name="remember">
+                        <span class="signin-checkbox-text">Remember me</span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="signin-btn">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const signinForm = document.getElementById('signinForm');
+            
+            if (signinForm) {
+                signinForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    console.log('Sign in form submitted');
+                    
+                    const formData = {
+                        email: document.getElementById('email').value,
+                        remember: document.getElementById('remember').checked
+                    };
+                    
+                    console.log('Form data:', formData);
+                    
+                    // Redirect to main page or dashboard
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 300);
+                });
+            }
+        });
+
+        // Функция для переключения мобильного меню
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            } else {
+                mobileMenu.classList.add('active');
+                hamburgerMenu.classList.add('active');
+            }
+        }
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            
+            if (!hamburgerMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
