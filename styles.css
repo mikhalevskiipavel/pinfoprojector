@@ -594,21 +594,62 @@ body::after {
 
 .benefit-card {
     background: rgba(0, 0, 0, 0.4);
-    border: calc(1px + 0.05vw) solid rgba(255, 255, 255, 0.1);
+    border: calc(2px + 0.1vw) solid rgba(121, 2, 192, 0.3);
     border-radius: calc(8px + 0.3vw);
     padding: calc(1.5rem + 0.8vw);
     text-align: center;
     transition: all 0.3s ease;
-    max-width: calc(280px + 5vw);
-    aspect-ratio: 1;
+    width: calc(280px + 5vw);
+    height: calc(280px + 5vw);
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.benefit-card .benefit-icon {
+    width: calc(48px + 1.5vw);
+    height: calc(48px + 1.5vw);
+    display: flex;
+    align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: calc(1rem + 0.4vw);
+    position: absolute;
+    top: calc(2rem + 1vw);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.benefit-card .benefit-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(0.47) sepia(1) saturate(2.5) hue-rotate(270deg), brightness(0.8) saturate(1.2) hue-rotate(280deg);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+/* Специальный стиль для средней иконки (face.png) */
+.benefit-card:nth-child(2) .benefit-icon img {
+    filter: brightness(0) invert(0.5) sepia(1) saturate(3) hue-rotate(270deg), brightness(0.9) saturate(1.5) hue-rotate(280deg);
 }
 
 .benefit-card:hover {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(121, 2, 192, 0.8);
     transform: translateY(calc(-2px - 0.1vw));
+}
+
+.benefit-card:hover .benefit-icon img {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: brightness(0) invert(0.6) sepia(1) saturate(3) hue-rotate(270deg), brightness(1) saturate(1.5) hue-rotate(280deg);
+}
+
+/* Hover эффект для средней иконки */
+.benefit-card:nth-child(2):hover .benefit-icon img {
+    filter: brightness(0) invert(0.7) sepia(1) saturate(3.5) hue-rotate(270deg), brightness(1.1) saturate(1.8) hue-rotate(280deg);
 }
 
 .benefit-title {
@@ -619,6 +660,13 @@ body::after {
     color: #FFFFFF;
     margin-bottom: calc(1rem + 0.4vw);
     letter-spacing: 0.01em;
+    position: absolute;
+    top: calc(6rem + 2vw);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 0 calc(1rem + 0.5vw);
+    text-align: center;
 }
 
 .benefit-text {
@@ -629,6 +677,13 @@ body::after {
     color: rgba(255, 255, 255, 0.7);
     margin: 0;
     letter-spacing: 0.005em;
+    position: absolute;
+    top: calc(9rem + 3vw);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 0 calc(1rem + 0.5vw);
+    text-align: center;
 }
 
 @media (max-width: 1024px) {
